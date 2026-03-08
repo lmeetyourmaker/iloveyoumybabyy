@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Love Letter 💌</title>
+    <!-- Pixel Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- Modern Format & New Elegant Pixel-like Font for the letter (VT323) -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Fredoka:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="game-container">
+        <!-- Sky Layer -->
+        <div id="sky-glow"></div>
+
+        <!-- Canvas wrapped to allow clean zooming -->
+        <div id="canvas-wrapper">
+            <canvas id="gameCanvas"></canvas>
+            <canvas id="rain-canvas"></canvas> <!-- dedicated rain layer for weather -->
+        </div>
+
+        <!-- UI Overlays -->
+        <div id="ui-layer">
+
+            <button id="pause-btn" class="hidden">❚❚</button>
+
+            <!-- Start Screen -->
+            <div id="start-screen" class="panel active">
+                <canvas id="boy-portrait" width="80" height="80" class="guide-boy"></canvas>
+                <h2>In this little game, a bird is trying to bring you a letter.</h2>
+                <p>Will you help the bird reach its destination?</p>
+                <button id="start-btn">Start Game ❤️</button>
+            </div>
+
+            <!-- Pause Screen -->
+            <div id="pause-screen" class="panel">
+                <h2>Game Paused</h2>
+                <button id="resume-btn">Resume</button>
+            </div>
+
+            <!-- Flash Overlay -->
+            <div id="flash-overlay"></div>
+            <!-- Lightning Overlay -->
+            <div id="lightning-overlay"></div>
+
+            <!-- Fail Screen -->
+            <div id="fail-screen" class="panel">
+                <h2>The letter couldn't reach you...</h2>
+                <p>Would you like to try again?</p>
+                <button id="fail-restart-btn">Try Again 🔄</button>
+            </div>
+
+            <!-- Win Screen / Prompt to Open Letter -->
+            <div id="win-screen" class="panel">
+                <h1 class="rainbow-text">The Letter Arrived!</h1>
+                <p class="final-msg">You have received a message.</p>
+                <button id="open-letter-btn">Click to read love 💌</button>
+            </div>
+
+            <!-- The Actual Love Letter Screen -->
+            <div id="letter-screen" class="panel paper-bg">
+                <div class="letter-content">
+                    My Love,<br><br>
+                    If you are reading this, it means my little messenger bird has finally made it to you.<br>
+                    I know it’s just a small gesture, a tiny game in a pixel world, but in some way, it carries my
+                    heart.<br><br>
+                    Since the day you came into my life, everything has felt brighter, warmer, and more colorful.<br>
+                    Ordinary days became special just because you were in them, and even the simplest moments now have
+                    meaning.<br><br>
+                    Sometimes I struggle to put into words how much you truly mean to me,<br>
+                    but I want you to know that having you by my side is one of the greatest joys of my life.<br>
+                    Every laugh we share, every glance, every quiet moment—it all reminds me that life is infinitely
+                    better with you in it.<br><br>
+                    Today is a day to celebrate you, but I don’t need a special occasion to tell you this:<br>
+                    You are incredible, inspiring, and beautiful in every way,<br>
+                    and I feel so lucky to call you mine.<br><br>
+                    I hope this little adventure—the bird, the obstacles, and finally delivering this letter—makes you
+                    smile,<br>
+                    because that smile of yours is the thing I treasure most in the world.<br><br>
+                    Happy Women’s Day, my love.<br>
+                    Thank you for being you, and thank you for being in my life.<br>
+                    I love you more than words, more than pixels, more than any game could ever show.<br><br>
+                    Always yours,<br>
+                    <strong>– Arda</strong>
+                </div>
+                <button id="restart-btn" style="margin-top: 30px;">Play Again</button>
+            </div>
+
+            <!-- HUD -->
+            <div id="hud" class="hidden">
+                <div class="hud-box">
+                    Distance: <span id="score-val">0</span> / 25
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="bg-music" loop autoplay>
+        <source src="Moonlight.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
